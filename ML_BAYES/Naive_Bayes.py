@@ -145,12 +145,15 @@ def csv_to_table(filename):
         return list(reader)
 
 def main():
-    data = csv_to_table("data26.csv")
+    data = csv_to_table("data29.csv")
 
     nb = NaiveBayes(data)
     print(nb)
-    test27 = ["Sunny","Cool", "High", "Strong"]
-    solution, steps = nb.predict(test27)
+    test26 = ["Sunny","Cool", "High", "Strong"]
+    test27 = ["0", "0", "1"]
+    test28 = ["0", "1"]
+    test29 = ["1", "0", "0", "1", "1", "1", "1", "0"]
+    solution, steps = nb.predict(test29)
     print(steps)
     print(solution)
 
