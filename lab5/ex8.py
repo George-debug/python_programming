@@ -72,13 +72,10 @@ def add_numbers(a, b):
     return a + b
 
 
-def augment_function(functionz, decorators: list[Callable]) -> Callable:
-    def inner(*args, **kwargs):
-        function = functionz
-        for decorator in decorators:
-            function = decorator(function)
-        return function(*args, **kwargs)
-    return inner
+def augment_function(function, decorators: list[Callable]) -> Callable:
+    for decorator in decorators:
+        function = decorator(function)
+    return function
 
 
 decorated_function = augment_function(
